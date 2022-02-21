@@ -1,0 +1,5 @@
+/* Hide the print button when printting */
+#btn-print{
+    display: none;
+    visibility: none;
+}

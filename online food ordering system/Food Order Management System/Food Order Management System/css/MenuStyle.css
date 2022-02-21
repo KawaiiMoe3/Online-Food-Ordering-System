@@ -1,0 +1,537 @@
+/* 
+    Author: Vijay Thapa;
+    Theme: Restaurant Food Order;
+    version: 1.0;
+*/
+
+/* CSS for All */
+*{
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent, #008aff);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(transparent, #00c6ff);
+}
+
+::-webkit-scrollbar-track{
+    background-color: rgb(216, 216, 255);
+    border-radius: 10px;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 1%;
+}
+.img-responsive{
+    width: 100%;
+}
+.img-curve{
+    border-radius: 15px;
+}
+
+.text-right{
+    text-align: right;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-white{
+    color: white;
+}
+.text-red{
+    color: red;
+}
+.text-crimson{
+    color: crimson;
+}
+.text-primary{
+    color: blue;
+}
+.text-warning{
+    color: orange;
+}
+.text-success{
+    color: green;
+}
+.text-black{
+    color: black;
+}
+.textsize-middle{
+    font-size: 20px;
+}
+.error-message{
+    text-align: center;
+    color: red;
+    font-size: 40px;
+}
+
+.clearfix{
+    clear: both;
+    float: none;
+}
+
+a{
+    color: #ff6b81;
+    text-decoration: none;
+}
+a:hover{
+    color: #ff4757;
+}
+
+.btn{
+    padding: 1%;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+.btn-primary{
+    border: 1px crimson solid;
+    background-color: crimson;
+    color: white;
+    cursor: pointer;
+}
+.btn-primary:hover{
+    color: crimson;
+    background-color: white;
+    transition: 0.3s;
+}
+.btn-lg{
+    padding: 1%;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.btn-danger{
+    border: 1px crimson solid;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+.btn-danger:hover{
+    background-color: white;
+    color: red;
+    transition: 0.3s;
+}
+.btn-prim{
+    border: 1px rgb(59, 59, 255) solid;
+    background-color: rgb(59, 59, 255);
+    color: white;
+    cursor: pointer;
+}
+.btn-prim:hover{
+    background-color: white;
+    color: rgb(59, 59, 255);
+    transition: 0.3s;
+}
+h2{
+    color: #2f3542;
+    font-size: 2rem;
+    margin-bottom: 2%;
+}
+h3{
+    font-size: 1.5rem;
+}
+.float-container{
+    position: relative;
+}
+.float-text{
+    position: absolute;
+    bottom: 50px;
+    left: 40%;
+}
+fieldset{
+    border: 1px solid white;
+    margin: 5%;
+    padding: 3%;
+    border-radius: 5px;
+}
+
+
+/* CSS for navbar section */
+.navbar{
+    background-color: rgb(31, 30, 30);
+    width: 100%;
+    z-index: 12;
+    position: fixed;
+}
+
+.logo{
+    margin: 20px 0;
+    width: 10%;
+    float: left;
+}
+.menu{
+    line-height: 60px;
+}
+.menu ul{
+    list-style-type: none;
+}
+
+.menu ul li{
+    display: inline;
+    padding: 1%;
+    font-weight: bold;
+}
+
+.menu ul li a{
+    color: white;
+}
+
+.menu ul li :hover{
+    color: crimson;
+    transition: 300ms;
+}
+
+/* CSS for foodie background image */
+.slider{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slides{
+    margin-top: 80px;
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* css for manual slide navigation */
+.navigation-manual{
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px black;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background: crimson;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+/* css for automatic navigation */
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 460px;
+
+}
+
+.navigation-auto div{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: crimson;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: crimson;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: crimson;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: crimson;
+}
+
+/* CSS for Food SEarch Section */
+.search-food input[type="search"]{
+    width: 50%;
+    padding: 1%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+.search-food input[type="search"]:hover{
+    background-color: whitesmoke;
+}
+
+.search-food input[type="search"]:focus{
+    background-color: white;
+}
+
+
+/* CSS for Categories */
+.categories{
+    padding: 4% 0;
+}
+
+.box-3{
+    width: 28%;
+    float: left;
+    margin: 2%;
+}
+
+
+/* CSS for Food Menu */
+.food-menu{
+    background-color: #ececec;
+    padding: 4% 0;
+}
+.food-menu-box{
+    width: 43%;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.food-menu-img{
+    width: 20%;
+    float: left;
+}
+
+.food-menu-desc{
+    width: 70%;
+    float: left;
+    margin-left: 8%;
+}
+
+.food-price{
+    font-size: 1.2rem;
+    margin: 2% 0;
+}
+.food-detail{
+    font-size: 1rem;
+    color: #747d8c;
+}
+
+
+/* CSS for Social */
+.social{
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+.social ul{
+    list-style-type: none;
+    
+}
+.social ul li{
+    display: inline;
+    padding: 1%;
+}
+
+.social ul li a img{
+    height: 50px;
+    width: 50px;
+}
+
+.footer{
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+/* for Order Section */
+.order{
+    width: 50%;
+    margin: 0 auto;
+}
+.input-responsive{
+    width: 96%;
+    padding: 1%;
+    margin-bottom: 3%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.order-label{
+    margin-bottom: 1%; 
+    font-weight: bold;
+}
+
+/* CSS for Cart Table */
+.style-table{
+    border-collapse: collapse;
+    margin: 50px auto;
+    font-size: 20px;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.style-table thead tr{
+    background-color: #0398dd;
+    color: #ffffff;
+    text-align: left;
+}
+
+.style-table th,
+.style-table td{
+    padding: 12px 15px;
+}
+
+.style-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+.style-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+.style-table tbody tr:last-of-type{
+    border-bottom: 2px solid #0398dd;
+}
+
+.style-table tbody tr:hover{
+    background-color: rgb(228, 228, 228);
+}
+
+/* CSS for myOrders Table */
+.style-table2{
+    border-collapse: collapse;
+    margin: 50px auto;
+    font-size: 15px;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.style-table2 thead tr{
+    background-color: #0398dd;
+    color: #ffffff;
+    text-align: left;
+}
+
+.style-table2 th,
+.style-table2 td{
+    padding: 12px 15px;
+}
+
+.style-table2 tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+.style-table2 tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+.style-table2 tbody tr:last-of-type{
+    border-bottom: 2px solid #0398dd;
+}
+
+/* CSS for Mobile Size or Smaller Screen */
+
+@media only screen and (max-width:768px){
+    .logo{
+        width: 80%;
+        float: none;
+        margin: 1% auto;
+    }
+
+    .menu ul{
+        text-align: center;
+    }
+
+    .food-search input[type="search"]{
+        width: 90%;
+        padding: 2%;
+        margin-bottom: 3%;
+    }
+
+    .btn{
+        width: 91%;
+        padding: 2%;
+    }
+
+    .food-search{
+        padding: 10% 0;
+    }
+
+    .categories{
+        padding: 20% 0;
+    }
+    h2{
+        margin-bottom: 10%;
+    }
+    .box-3{
+        width: 100%;
+        margin: 4% auto;
+    }
+
+    .food-menu{
+        padding: 20% 0;
+    }
+
+    .food-menu-box{
+        width: 90%;
+        padding: 5%;
+        margin-bottom: 5%;
+    }
+    .social{
+        padding: 5% 0;
+    }
+    .order{
+        width: 100%;
+    }
+}
